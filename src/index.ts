@@ -1,16 +1,19 @@
-import { serve } from '@hono/node-server'
-import { Hono } from 'hono'
+import { serve } from "@hono/node-server";
+import { Hono } from "hono";
 
-const app = new Hono()
+import { db } from "./langchain/database/sql/index";
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
-})
+const app = new Hono();
 
-const port = 3000
-console.log(`Server is running on port ${port}`)
+app.get("/", (c) => {
+  db();
+  return c.text("Hello Hono!");
+});
+
+const port = 3000;
+console.log(`Server is running on port ${port}`);
 
 serve({
   fetch: app.fetch,
-  port
-})
+  port,
+});
