@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "dev": "tsx watch src/index.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.8.2",
+    "@langchain/community": "^0.0.34",
+    "@langchain/openai": "^0.0.15",
+    "dotenv": "^16.4.5",
+    "hono": "^4.0.9",
+    "langchain": "^0.1.25",
+    "sqlite3": "^5.1.7",
+    "typeorm": "^0.3.20"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "tsx": "^3.12.2"
+  }
+}
