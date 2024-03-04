@@ -2,11 +2,13 @@ import { serve } from "@hono/node-server";
 import { Hono } from "hono";
 
 import { db } from "./langchain/database/sql/index";
+import { agentLLM } from "./langchain/database/sql/agent";
 
 const app = new Hono();
 
 app.get("/", (c) => {
   db();
+  agentLLM();
   return c.text("Hello Hono!");
 });
 
