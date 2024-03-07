@@ -70,7 +70,7 @@ export const agentLLM = async () => {
   console.log(
     await agentExecutor.invoke({
       input:
-        "is it possible to show some information about the movies on any table of movieDB_API_responses? and also let me know with table you are using for getting this information?",
+        "can you tell me what are the tables that you have avaiable to query?",
     })
   );
 };
