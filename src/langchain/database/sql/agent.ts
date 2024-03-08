@@ -70,7 +70,7 @@ export const agentLLM = async () => {
   console.log(
     await agentExecutor.invoke({
       input:
-        "can you tell me what are the tables that you have avaiable to query?",
+        "can you tell me whast the order that has the highest price and the details of it?",
     })
   );
 };

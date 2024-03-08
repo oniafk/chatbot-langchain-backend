@@ -9,7 +9,7 @@ interface UserInput {
   user_password: string;
 }
 
-export async function createUser(c) {
+export async function createUser(c: any) {
   const userInput = (await c.req.json()) as UserInput;
   const { user_first_name, user_last_name, user_email, user_password } =
     userInput;
