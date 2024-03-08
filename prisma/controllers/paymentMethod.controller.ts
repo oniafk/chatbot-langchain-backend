@@ -11,7 +11,7 @@ interface PaymentMethodInput {
   payment_method_expiration_date: Date;
 }
 
-export async function createPaymentMethod(c) {
+export async function createPaymentMethod(c: any) {
   try {
     const paymentMethodInput = (await c.req.json()) as PaymentMethodInput;
     const { payment_method_user_id, payment_method_id, ...data } =
