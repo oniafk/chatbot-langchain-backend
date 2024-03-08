@@ -4,6 +4,7 @@ import { Hono } from "hono";
 import { db } from "./langchain/database/sql/index";
 import { agentLLM } from "./langchain/database/sql/agent";
 import { createUser } from "../prisma/controllers/user.controller";
+import { createPaymentMethod } from "../prisma/controllers/paymentMethod.controller";
 
 const app = new Hono();
 
@@ -14,6 +15,7 @@ app.get("/", (c) => {
 });
 
 app.post("/users", createUser);
+app.post("/payment-methods", createPaymentMethod);
 
 const port = 3000;
 console.log(`Server is running on port ${port}`);
