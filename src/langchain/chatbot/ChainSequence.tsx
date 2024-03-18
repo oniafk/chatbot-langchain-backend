@@ -1,7 +1,11 @@
 import { ChatOpenAI } from "@langchain/openai";
-import { PromptTemplate } from "langchain/prompts";
-import { StringOutputParser } from "langchain/schema/output_parser";
-import { RunnableSequence, RunnablePassthrough } from "langchain/runnables";
+import { PromptTemplate } from "@langchain/core/prompts";
+import { StringOutputParser } from "@langchain/core/output_parsers";
+
+import {
+  RunnableSequence,
+  RunnablePassthrough,
+} from "@langchain/core/runnables";
 
 import retriever from "./retrievers/customerServiceRulesRetriever";
 import { combineDocuments } from "../documents/combineDocuments";
@@ -17,7 +21,8 @@ interface ChainSequenceProps {
   questionInput: string;
 }
 
-async function ChainSequence({ questionInput }: ChainSequenceProps) {
+async function ChainSequence(c: any) {
+  const questionInput = (await c.req.json()) as ChainSequenceProps;
   const standaloneQuestionTemplate = ` given a question, convert it to a standalone question, question: {question} standalone question: `;
 
   const standaloneQuestionPromt = PromptTemplate.fromTemplate(
@@ -136,7 +141,10 @@ async function ChainSequence({ questionInput }: ChainSequenceProps) {
   const response = await chain.invoke({
     question: questionInput,
   });
-  return response;
+
+  console.log(response.answer);
+
+  return c.json(response.answer);
 }
 
 export default ChainSequence; // add router to use this function in the server
