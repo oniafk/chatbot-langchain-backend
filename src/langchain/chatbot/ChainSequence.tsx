@@ -142,8 +142,6 @@ async function ChainSequence(c: any) {
     question: questionInput,
   });
 
-  console.log(response.answer);
-
   return c.json(response.answer);
 }
 

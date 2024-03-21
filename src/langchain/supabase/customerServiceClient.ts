@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { SupabaseVectorStore } from "@langchain/community/vectorstores/supabase";
 import { OpenAIEmbeddings } from "@langchain/openai";
-import getSpliitedText from "../documents/customerService/textSplitter";
+import getSpliitedText from "../documents/customerService/customerServicePolicy/textSplitter";
 
 const supabaseApiKey = process.env.SUPABASE_API_KEY as string;
 const supabaseUrl = process.env.SUPABASE_URL as string;
