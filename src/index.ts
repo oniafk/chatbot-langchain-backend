@@ -11,9 +11,14 @@ import { createStatusDelivery } from "../prisma/controllers/statusDelivery.contr
 import { createOrder } from "../prisma/controllers/order.controller";
 import ChainSequence from "./langchain/chatbot/ChainSequence";
 
+import loadText from "./langchain/documents/customerService/conversationScenarios/textLoader";
+import getSplittedText from "./langchain/documents/customerService/conversationScenarios/textSplitter";
+
 const app = new Hono();
 
 app.get("/", (c) => {
+  loadText();
+  getSplittedText();
   return c.text("Hello Hono!");
 });
 
