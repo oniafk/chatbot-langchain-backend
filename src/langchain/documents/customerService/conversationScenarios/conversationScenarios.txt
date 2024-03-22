@@ -1,0 +1,68 @@
+# Greetings and openning spiels
+
+-Hey there. Thank you for using {Service Name}. Is there something I can help you with, {Customer Name}?
+-Hi, {Customer Name}! Welcome back to Our store. Did you run into more trouble with any of your orders?
+-Welcome back, {Customer Name}. I’m happy to see you again! What can we help you with today?
+-Hi {Customer Name}! Thanks for reaching out. How can I assist you?
+-Good day, and welcome to Our company. Is there anything specific you would like to know or discuss? Please let me know and I will do my best to help.
+-Thanks for choosing to chat with us. How can we help you today, {Customer Name}?
+-Hello and welcome to our chat. Please be aware that we record all our chats for improving our customer experience. Is there anything specific you would like to discuss today?
+-Hello, {Customer Name}. I’m here to help you with any questions or concerns you may have. What can I do for you today?
+
+# Apologies
+
+-I’m sorry to hear that, {Customer Name}. I’ll do my best to help you with that.
+-I apologize for the inconvenience, {Customer Name}. I’ll do my best to help you with that.
+-I hear you. I’m sorry that you’re still having trouble with this. I’ll do my best to help you with that.
+-Thank you for letting us know about the issue, [Customer name]. I am very sorry it’s happened to you. Please, give me a minute to make things right for you. 
+-I’m sorry to hear that you’ve experienced this issue and apologize for the inconvenience it’s caused. Let me look into this and I’ll have the solution for you shortly. Thank you for your patience.
+
+
+# Asking for more information
+
+-Thank you for explaining the problem. Can you please provide me with the ticket or order number for this issue, so I can access your complaint and better assist you?
+-Could you please provide me with some additional information about the product or ordernumber? will help me address your issue faster.
+-I apologize for any inconvenience you may be experiencing. In order to resolve this issue, can you please provide me with your order number?
+-[Customer name], I apologize for the error on our end. I’m going to look into this for you right away. Thank you for your patience.
+-Thank you for letting us know about the issue, [Customer name]. I am very sorry it’s happened to you. Please, give me a minute to make things right for you. 
+
+# Dealing with an angry customer
+
+-I hear you. I’m terribly sorry for the frustration and inconvenience this has caused. I’ll be sharing your feedback with [name of the department e.g., customer service manager].
+-I understand why you feel upset. I appreciate you bringing this to our attention. So, you have problems with [product] and now you can’t [repeat what the customer said], is that correct?
+-I know it’s frustrating when you receive a faulty product. Could you describe exactly what’s wrong?
+-I understand why you’re upset. Can you please tell me a little bit more about the problem?
+
+# Offering an alternative solution
+
+-I apologize for any difficulty you are experiencing with our product. While we are unable to resolve this issue, may I recommend you try one of the following solutions as an alternative?[Describe the solution]
+-Thank you for your patience. I understand that this has been a frustrating experience for you. I would like to offer you a [discount, refund, replacement, etc.] as a token of our appreciation for your understanding.[Describe the solution]
+-I understand that this has been a frustrating experience for you. I would like to offer you a [discount, refund, replacement, etc.] as a token of our appreciation for your understanding.[Describe the solution]
+-Sorry to hear that! May I suggest an alternative? [Describe the solution]
+-I get it. I would be disappointed, too. Let me share an alternative solution with you. [Describe the solution]
+-I’m sorry for the inconvenience. Do you think [insert an alternative] would work for you?
+-I know what you mean! Here’s [an alternative] that should fit your bill. Let me know your thoughts.
+
+# not able to meet the customer's request
+
+-Hi [customer name]! Though we’re committed to ensuring that all your needs are met, we’re afraid this request [insert details] goes against our company policy. We are happy to offer you [an alternative solution] instead. Please email us with your contact details. Thanks!
+-I understand your request, however, we are unable to process it at this time due to [specific reason, such as company policy, technical limitations, etc.]. Is there anything else I can help you with?
+-Unfortunately, we cannot proceed with your request at this time as [explanation of why the requirements are not met]. Would you like to discuss other options or alternative services?
+-We regret to inform you that we cannot fulfill your request within the required timeframe due to [reason, such as high demand, internal processes, etc.]. Is there anything else I can assist you with, or can we explore alternative solutions together?
+-I’m sorry, but we are unable to meet your request at this time. We are happy to offer you [an alternative solution] instead. Please email us with your contact details. Thanks!
+-I'm sorry but I can not provide personal information related to this account. I can help you with other information or questions you may have.
+-I’m sorry, but I can’t do that. Is there anything else I can help you with?
+-I'm sorry but I can not share personal information such as [specific information] with you. Is there anything else I can help you with?
+-I hope you can understand but for security of our customers and company policy, I can not share personal information such as [specific information] with you. Is there anything else I can help you with?
+
+# Ending the conversation
+
+-Thank you for chatting with us today. We hope that your issue has been fully resolved. If you have any further questions or concerns, please don't hesitate to reach out to us. Have a great day!
+-Thank you for using our live chat service, [customer name]. I am now closing this chat. If you have further questions, please feel free to contact us again. Have a pleasant day ahead!
+-Thanks for contacting us, [customer name]. If you experience further issues, you can contact us via [email] or [phone number] as well. Our customer service team is available 24/7 to assist you. You can also visit our website for additional information and support resources. 
+-Thank you for chatting with us today. If you still have questions or concerns, please don't hesitate to reach out to us again. You may also want to try our self-help resources [list of resources] or contact us at [contact information]. See you!
+-Thanks for taking an interest in our brand! Have a nice day and hope to see you soon.
+-No worries. I’m always happy to assist you. Don’t hesitate to drop me a line if you need my help in the future.
+-We appreciate your opinion and look forward to seeing you soon.
+-Thanks for contacting our support team! I’m glad I could help. Is there anything else I can help you with?
+-Thank you for chatting with us. I’m always happy to help.
