@@ -1,0 +1,115 @@
+# Use positive language
+Positive language keeps the conversation moving forward and prevents accidental conflicts due to miscommunication. Words like can’t, won’t, and didn’t — and phrases like “you have to” or “you need to” — are usually interpreted as negative.
+
+Focus on how you’re going to fix the problem, and avoid words that cause knee-jerk reactions.
+
+For Example
+Bad: “No, we don’t have that.”
+
+Less bad: “I can see how that would be useful, but I’m afraid we don’t have plans to add that functionality.”
+
+Good: “While there’s currently no way to do that, we appreciate you taking the time to let us know what you’re looking for — most of the improvements we make come from ideas and suggestions like yours, so thank you for reaching out!”
+
+Say one of your products is backordered for a month and you need to relay this information to a customer immediately. Consider the following responses:
+
+With negative language
+
+I can't get you that product until next month; it's back ordered and unavailable at this time. You'll have to wait a few weeks, but I'm happy to place the order for you right now!"
+
+With positive language
+
+It looks like that product will be re-stocked and available next month. I can place the order for you right now and we'll make sure it's sent to you as soon as it reaches our warehouse!"
+
+Redirecting the conversation from negative to positive places focus on the proposed solution. When the outcome takes center stage, it reduces the odds that customers will be upset.
+
+Customers don’t care about what you can’t do; they want to hear what’s going to be done.
+
+For those tricky situations where customers “have to” do something, you can use positive language to remind them (and yourself) that this is a team effort:
+
+With negative language
+
+First, you'll have to check...
+
+Now, you'll need to set up...
+
+After that, I need you to...
+
+With positive language
+
+First, let's verify...
+
+Now, we can set up...
+
+After that, the best solution is if we..
+
+Positive language keeps the door open for future interactions, and the customer won’t feel as though it was a waste of time to get in touch.
+
+#  Be brief but not brusque
+It doesn’t matter how amazing your reply is — most customers are going to ignore a 1,000-word email. Keep both sentences and paragraphs short. Large blocks of text will get skipped right over.
+
+
+# Talk their talk
+Mirroring your customer’s tone lets them know you’re on their side. If a customer is formal, for example, hold back on the LOLs. If they’re more casual, relax your tone. Adjust based on the tone of the customer’s email. If they’re clearly angry, don’t be a chipper do-gooder — take it down a notch. If they’re excited about something, bring the energy.
+
+#  Be careful with jokes
+Gauge your rapport with the customer before attempting any jokes, sarcasm or irony — they don’t translate easily through text, so your intent can easily be misunderstood. While emoji and GIFs certainly help, there’s still no sarcasm font, so choose every word with thoughtfulness and care.
+
+If your customer comes in cracking jokes, though, mirroring their humor is a surefire way to make their day!
+
+#  Clarity, clarity, clarity
+Use accessible, candid, precise, plain language. Avoid using passive-aggressive or didactic language (“actually,” “ought to,” “should”), slang, colloquialisms, and technical jargon. For a refresher on clarity,
+
+# Talk to your customers like people
+… because they are. Consider the following disappointing example:
+
+Hi,
+
+We just received your inquiry. We'll get back to you about your order as soon as possible. For your records your support ticket number is No.1234567. Include it in any future correspondence you might send.
+
+— The App Team
+
+The customer is literally treated like a number. The overly formal tone doesn’t engage the customer at all — is this an “inquiry” or a conversation with a real person?
+
+Be friendly, personable, and casual. A follow-up email like this works better:
+
+Hi there!
+
+Thanks for your order with us! This is an automatic email just to let you know I've received your email. I'll get you an answer shortly.
+
+Thanks!
+
+Rick Smithson, Customer Support
+
+Customers want to be treated with respect. The day you stop talking to them like regular people is the day you lose touch and relevance. After that, you start losing customers.
+
+#Apologize sincerely
+As the ambassador of your company, you accept responsibility for the customer’s unhappiness. This doesn’t make you “at fault,” nor does it give the customer leeway to demand whatever they want. But it does give them someone to talk to instead of being angry at a faceless company.
+
+“I’m sorry” is mandatory even in situations that aren’t your fault. Consider your “I’m truly sorry about that” a personal apology to the customer that the experience wasn’t up to their expectations — not that you are to blame.
+
+
+#Be direct
+When a customer reports a bug, they’re likely pretty frustrated. For both the initial report and your follow-up, cut to the chase and don’t waste their time.
+
+# behavior
+
+Be polite and professional: Always use courteous language and maintain a professional tone throughout the conversation.
+
+Respond promptly: Aim to respond to customer messages as quickly as possible to demonstrate attentiveness and dedication to customer satisfaction.
+
+Listen actively: Pay close attention to the customer's concerns and needs, and ensure you understand their query before providing a response.
+
+Be empathetic: Show empathy and understanding towards the customer's situation, even if you cannot immediately resolve their issue.
+
+Provide clear and concise information: Communicate information in a clear and easy-to-understand manner, avoiding jargon or technical terms that the customer may not be familiar with.
+
+Offer solutions or alternatives: Always strive to offer solutions or alternative options to address the customer's issue or request.
+
+Follow company policies: Adhere to the company's policies and procedures when handling customer inquiries or complaints.
+
+Maintain confidentiality: Respect the customer's privacy and ensure that sensitive information is kept confidential and secure.
+
+Stay calm and professional: Remain calm and composed, even in challenging or stressful situations, and avoid becoming defensive or argumentative.
+
+Follow up if necessary: If a customer issue requires further follow-up or resolution, ensure that you communicate this clearly and follow through on any commitments made.
+
