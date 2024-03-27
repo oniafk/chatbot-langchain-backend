@@ -5,10 +5,11 @@
   "dependencies": {
     "@hono/node-server": "^1.8.2",
     "@langchain/community": "^0.0.40",
-    "@langchain/openai": "^0.0.21",
+    "@langchain/openai": "^0.0.23",
     "@prisma/client": "5.10.2",
     "@supabase/supabase-js": "^2.39.8",
     "dotenv": "^16.4.5",
+    "hnswlib-node": "^3.0.0",
     "hono": "^4.0.9",
     "langchain": "^0.1.25",
     "mysql": "^2.18.1",
