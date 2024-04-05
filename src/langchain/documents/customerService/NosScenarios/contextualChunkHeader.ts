@@ -26,8 +26,6 @@ const getContextualChunk = async () => {
     );
 
     let document = vectorstore.docstore._docs;
-
-    console.log(document);
   } catch (error) {
     console.log(error);
   }
