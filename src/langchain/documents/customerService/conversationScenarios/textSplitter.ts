@@ -17,7 +17,6 @@ const getSplittedText = async () => {
       new Document({ pageContent: result }),
     ]);
 
-    console.log(docOutput);
     return docOutput;
   } catch (error) {
     console.log(error);
