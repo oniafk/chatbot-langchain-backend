@@ -11,12 +11,15 @@ import { createStatusDelivery } from "../prisma/controllers/statusDelivery.contr
 import { createOrder } from "../prisma/controllers/order.controller";
 import ChainSequence from "./langchain/chatbot/ChainSequence";
 
-import getContextualChunk from "./langchain/documents/customerService/conversationScenarios/contextualChunkHeader";
+import getContextualChunk from "./langchain/supabase/schema";
+import { createSchema } from "./langchain/supabase/schema";
 
 const app = new Hono();
 
 app.get("/", (c) => {
+  createSchema();
   getContextualChunk();
+
   return c.text("Hello Hono!");
 });
 
@@ -28,7 +31,7 @@ app.post("/status-deliveries", createStatusDelivery);
 app.post("/create-order", createOrder);
 app.post("/chatbot", ChainSequence);
 
-const port = 3000;
+const port = 3001;
 console.log(`Server is running on port ${port}`);
 
 serve({
