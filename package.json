@@ -5,20 +5,27 @@
   "dependencies": {
     "@hono/node-server": "^1.8.2",
     "@langchain/community": "^0.0.40",
-    "@langchain/openai": "^0.0.23",
+    "@langchain/openai": "latest",
     "@prisma/client": "5.10.2",
     "@supabase/supabase-js": "^2.39.8",
     "dotenv": "^16.4.5",
     "hnswlib-node": "^3.0.0",
     "hono": "^4.0.9",
-    "langchain": "^0.1.25",
+    "langchain": "^0.1.30",
     "mysql": "^2.18.1",
+    "pg": "^8.11.3",
+    "pgvector": "^0.1.8",
     "prisma": "^5.10.2",
     "sqlite3": "^5.1.7",
+    "ts-postgres": "^2.0.1",
     "typeorm": "^0.3.20"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
+    "@types/pg": "^8.11.4",
     "tsx": "^3.12.2"
+  },
+  "resolutions": {
+    "@langchain/core": "^0.1.52"
   }
 }
