@@ -3,12 +3,14 @@
     "dev": "tsx watch src/index.ts"
   },
   "dependencies": {
+    "@faker-js/faker": "^8.4.1",
     "@hono/node-server": "^1.8.2",
-    "@langchain/community": "^0.0.40",
-    "@langchain/openai": "latest",
+    "@langchain/community": "^0.0.44",
+    "@langchain/openai": "^0.0.26",
     "@prisma/client": "5.10.2",
     "@supabase/supabase-js": "^2.39.8",
     "dotenv": "^16.4.5",
+    "faker": "^6.6.6",
     "hnswlib-node": "^3.0.0",
     "hono": "^4.0.9",
     "langchain": "^0.1.30",
