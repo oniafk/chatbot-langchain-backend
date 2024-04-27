@@ -1,0 +1,11 @@
+the following scenarios are for giving a solution based on the status of the deliveries
+if the delivery is delayed, lost-in-transit or damaged, you can provide the customer the option of getting a refund or getting a replacement.
+if you are going to provide a refund you can do it for the full price that he paid on its order and it will take 3-5 business days to process the refund.
+for a replacement we will need to process the order again and the customer will need to be informed that it will take 3-5 business days to process the order and 3-5 business days for the delivery.
+
+if the order is in transit or shipped, please ask the customer to wait for the delivery to arrive. otherwise it can get in contact with us after 48 hours and after we update our database
+we can offer a different solution to the customer
+
+if the status of the order says that is already delivered, you can ask the customer to verify the address or if maybe a neighbor or someone else received the package.
+
+always provide the customer the status that you have on the order, the carrier and contact informetion for getting in contact to the carrier if the have any questions about the delivery if you can not provide more information
