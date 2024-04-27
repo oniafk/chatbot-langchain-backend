@@ -21,3 +21,11 @@ export async function createProduct(c: any) {
   }
   return c.json({ product: newProduct, ok: true }, 201);
 }
+
+export async function getProducts(c: any) {
+  const products = await prisma.product.findMany();
+  if (!products) {
+    return c.json({ error: "Cannot get products", ok: false }, 422);
+  }
+  return c.json({ products, ok: true }, 200);
+}
