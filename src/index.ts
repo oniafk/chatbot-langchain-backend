@@ -18,7 +18,11 @@ import {
   createStatusDelivery,
   getStatusDeliveries,
 } from "../prisma/controllers/statusDelivery.controller";
-import { createOrder, getOrders } from "../prisma/controllers/order.controller";
+import {
+  createOrder,
+  getOrders,
+  getAllOrders,
+} from "../prisma/controllers/order.controller";
 import ChainSequence from "./langchain/chatbot/ChainSequence";
 
 import ChainSequencetest from "./langchain/chatbot/chainSequenceTest";
@@ -44,6 +48,7 @@ app.get("/carriers", getCarriersInfo);
 app.get("/status-deliveries", getStatusDeliveries);
 app.get("/orders", getOrders);
 app.get("/payment-methods", getPaymentMethods);
+app.get("/all-order-info", getAllOrders);
 
 const port = 3001;
 console.log(`Server is running on port ${port}`);
