@@ -2,7 +2,7 @@ import { MatryoshkaRetriever } from "langchain/retrievers/matryoshka_retriever";
 import { SupabaseVectorStore } from "@langchain/community/vectorstores/supabase";
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { createClient } from "@supabase/supabase-js";
-import loadText from "../documents/customerService/NosScenarios/textLoader";
+import loadText from "../documents/customerService/shipments/testLoader";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 import { HNSWLib } from "@langchain/community/vectorstores/hnswlib";
 
@@ -22,7 +22,7 @@ const largeEmbedding = new OpenAIEmbeddings({
 
 const vectorStore = new SupabaseVectorStore(smallEmbedding, {
   client: createClient(supabaseURL!, supabaseKey!),
-  tableName: "test_document",
+  tableName: "documents",
 });
 
 const retriever = new MatryoshkaRetriever({
@@ -36,10 +36,10 @@ export const getContextualChunk = async () => {
 
   const metadatas = [
     {
-      title: "NOs Scenarios",
+      title: "shipment scenarios",
       description:
-        "this document contains the NOs scenarios for the customer service policies. The NOs scenarios are the negative scenarios that the customer service associate sould avoid. this shows the scenarios that the customer service associate should not follow and behavior that the cursomer service associate should not exhibit.",
-      source: "4",
+        "this document contains the scenarios that you will have when replying the customer message if it ask any information related to delivery of the products, tracking numbers, carriers, etc.",
+      source: "5",
     },
   ];
 
@@ -53,7 +53,7 @@ export const getContextualChunk = async () => {
     [`${result}`],
     metadatas,
     {
-      chunkHeader: `DOCUMENT NAME: NOs Scenarios\n\n---\n\n`,
+      chunkHeader: `DOCUMENT NAME: shipment scenarios\n\n---\n\n`,
       appendChunkOverlapHeader: true,
     }
   );
