@@ -22,3 +22,21 @@ export async function createStatusDelivery(c: any) {
   }
   return c.json({ status_delivery: newStatusDelivery, ok: true }, 201);
 }
+
+export async function getStatusDeliveries(c: any) {
+  try {
+    const statusDeliveries = await prisma.status_delivery.findMany({
+      select: {
+        status_delivery_id: true,
+        status_delivery_name: true,
+      },
+    });
+    return c.json({ statusDeliveries, ok: true });
+  } catch (error) {
+    console.error(error);
+    return c.json(
+      { error: "An error occurred while fetching the status deliveries" },
+      500
+    );
+  }
+}
