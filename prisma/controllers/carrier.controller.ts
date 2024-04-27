@@ -23,3 +23,17 @@ export async function createCarrier(c: any) {
   }
   return c.json({ carrier: newCarrier, ok: true }, 201);
 }
+
+export async function getCarriersInfo(c: any) {
+  const carrier = await prisma.carrier.findMany({
+    select: {
+      carrier_name: true,
+      carrier_phone: true,
+      carrier_email: true,
+    },
+  });
+  if (!carrier) {
+    return c.json({ error: "Cannot get products", ok: false }, 422);
+  }
+  return c.json({ carrier, ok: true }, 200);
+}
