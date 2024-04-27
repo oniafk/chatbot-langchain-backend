@@ -57,3 +57,20 @@ export async function createOrder(c: any) {
     return c.json({ error: "An error occurred while creating the order" }, 500);
   }
 }
+
+export async function getOrders(c: any) {
+  try {
+    const orders = await prisma.order.findMany({
+      select: {
+        order_total: true,
+        order_carrier: true,
+        order_tracking_number: true,
+        order_status: true,
+      },
+    });
+    return c.json({ orders, ok: true });
+  } catch (error) {
+    console.error(error);
+    return c.json({ error: "An error occurred while fetching orders" }, 500);
+  }
+}
