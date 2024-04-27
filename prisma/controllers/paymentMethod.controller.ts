@@ -42,3 +42,16 @@ export async function createPaymentMethod(c: any) {
     );
   }
 }
+
+export async function getPaymentMethods(c: any) {
+  try {
+    const paymentMethods = await prisma.payment_method.findMany();
+    return c.json({ paymentMethods, ok: true });
+  } catch (error) {
+    console.error(error);
+    return c.json(
+      { error: "An error occurred while fetching the payment methods" },
+      500
+    );
+  }
+}
