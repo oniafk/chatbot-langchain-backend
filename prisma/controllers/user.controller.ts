@@ -26,3 +26,13 @@ export async function createUser(c: any) {
   }
   return c.json({ user: newUser, ok: true }, 201);
 }
+
+export async function getUsers(c: any) {
+  try {
+    const users = await prisma.user.findMany();
+    return c.json({ users, ok: true });
+  } catch (error) {
+    console.error(error);
+    return c.json({ error: "An error occurred while fetching the users" }, 500);
+  }
+}
