@@ -1,25 +1,32 @@
 import { serve } from "@hono/node-server";
 import { Hono } from "hono";
 
-// import { db } from "./langchain/database/sql/index";
-// import { agentLLM } from "./langchain/database/sql/agent";
-import { createUser } from "../prisma/controllers/user.controller";
-import { createPaymentMethod } from "../prisma/controllers/paymentMethod.controller";
-import { createProduct } from "../prisma/controllers/product.controller";
-import { createCarrier } from "../prisma/controllers/carrier.controller";
-import { createStatusDelivery } from "../prisma/controllers/statusDelivery.controller";
-import { createOrder } from "../prisma/controllers/order.controller";
+import { createUser, getUsers } from "../prisma/controllers/user.controller";
+import {
+  createPaymentMethod,
+  getPaymentMethods,
+} from "../prisma/controllers/paymentMethod.controller";
+import {
+  createProduct,
+  getProducts,
+} from "../prisma/controllers/product.controller";
+import {
+  createCarrier,
+  getCarriersInfo,
+} from "../prisma/controllers/carrier.controller";
+import {
+  createStatusDelivery,
+  getStatusDeliveries,
+} from "../prisma/controllers/statusDelivery.controller";
+import { createOrder, getOrders } from "../prisma/controllers/order.controller";
 import ChainSequence from "./langchain/chatbot/ChainSequence";
 
-import getContextualChunk from "./langchain/supabase/schema";
-import { createSchema } from "./langchain/supabase/schema";
+import ChainSequencetest from "./langchain/chatbot/chainSequenceTest";
 
 const app = new Hono();
 
 app.get("/", (c) => {
-  createSchema();
-  getContextualChunk();
-
+  ChainSequencetest();
   return c.text("Hello Hono!");
 });
 
@@ -30,6 +37,13 @@ app.post("/carriers", createCarrier);
 app.post("/status-deliveries", createStatusDelivery);
 app.post("/create-order", createOrder);
 app.post("/chatbot", ChainSequence);
+
+app.get("/products", getProducts);
+app.get("/users", getUsers);
+app.get("/carriers", getCarriersInfo);
+app.get("/status-deliveries", getStatusDeliveries);
+app.get("/orders", getOrders);
+app.get("/payment-methods", getPaymentMethods);
 
 const port = 3001;
 console.log(`Server is running on port ${port}`);
