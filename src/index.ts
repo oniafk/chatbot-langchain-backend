@@ -23,14 +23,10 @@ import {
   getOrders,
   getAllOrders,
 } from "../prisma/controllers/order.controller";
-import ChainSequence from "./langchain/chatbot/ChainSequence";
-
-import ChainSequencetest from "./langchain/chatbot/chainSequenceTest";
 
 const app = new Hono();
 
 app.get("/", (c) => {
-  ChainSequencetest();
   return c.text("Hello Hono!");
 });
 
@@ -40,7 +36,6 @@ app.post("/products", createProduct);
 app.post("/carriers", createCarrier);
 app.post("/status-deliveries", createStatusDelivery);
 app.post("/create-order", createOrder);
-app.post("/chatbot", ChainSequence);
 
 app.get("/products", getProducts);
 app.get("/users", getUsers);
