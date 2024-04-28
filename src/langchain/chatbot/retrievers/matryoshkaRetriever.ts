@@ -29,7 +29,13 @@ const retriever = new MatryoshkaRetriever({
   largeK: 3,
 });
 
-const getRelevantDocuments = async (customerMessage: string) => {
+interface ChainSequenceProps {
+  humanMessage: string;
+}
+
+async function getRelevantDocuments(c: any) {
+  const customerMessage = (await c.req.json()) as ChainSequenceProps;
+
   const userInfo = await getInfo();
 
   const message = customerMessage;
@@ -69,7 +75,7 @@ const getRelevantDocuments = async (customerMessage: string) => {
 
   const allDocuments = DocumentsToString + userInfo;
 
-  return allDocuments;
-};
+  return c.json(allDocuments);
+}
 
 export default getRelevantDocuments;

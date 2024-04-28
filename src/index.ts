@@ -24,6 +24,7 @@ import {
   getAllOrders,
 } from "../prisma/controllers/order.controller";
 
+import getRelevantDocuments from "./langchain/chatbot/retrievers/matryoshkaRetriever";
 const app = new Hono();
 
 app.get("/", (c) => {
@@ -36,6 +37,7 @@ app.post("/products", createProduct);
 app.post("/carriers", createCarrier);
 app.post("/status-deliveries", createStatusDelivery);
 app.post("/create-order", createOrder);
+app.post("/chatbot", getRelevantDocuments);
 
 app.get("/products", getProducts);
 app.get("/users", getUsers);
