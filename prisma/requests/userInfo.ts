@@ -1,5 +1,5 @@
 async function orderInfo() {
-  const url = "http://localhost:3001/orders";
+  const url = "https://chatbot-langchain-backend.onrender.com/orders";
   const response = await fetch(url);
   const data = await response.json();
 
