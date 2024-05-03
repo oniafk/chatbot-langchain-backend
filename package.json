@@ -1,7 +1,8 @@
 {
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "start": "bun run src/index.ts"
+    "start": "bun run src/index.ts",
+    "build": " bun build ./src/index.ts "
   },
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
