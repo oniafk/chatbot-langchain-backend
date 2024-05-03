@@ -3,10 +3,10 @@ generator client {
 }
 
 datasource db {
-  provider     = "postgresql"
-  url          = env("RENDER_EXTERNAL_URL")
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
   shadowDatabaseUrl = env("SHADOW_DATA_BASE")
-  relationMode = "prisma"
+  relationMode      = "prisma"
 }
 
 model user {
@@ -21,20 +21,20 @@ model user {
 }
 
 model payment_method {
-  payment_method_id            String   @id
-  payment_method_user_id       Int
-  paymet_method_number         Int
-  payment_method_name          String
-  payment_method_type          String
-  payment_method_expiration_date DateTime  
-  user                         user     @relation(fields: [payment_method_user_id], references: [user_id]) 
+  payment_method_id              String   @id
+  payment_method_user_id         Int
+  paymet_method_number           Int
+  payment_method_name            String
+  payment_method_type            String
+  payment_method_expiration_date DateTime
+  user                           user     @relation(fields: [payment_method_user_id], references: [user_id])
 }
 
 model product {
   product_id    Int     @id @default(autoincrement())
   product_name  String
   product_price Float
-  orders         order[]
+  orders        order[]
 }
 
 model carrier {
@@ -48,14 +48,37 @@ model carrier {
 model status_delivery {
   status_delivery_id   Int     @id @default(autoincrement())
   status_delivery_name String
-  orders                order[]
+  orders               order[]
 }
+
 model movieDB_API_responses {
-  id            Int                            @id @default(autoincrement())
-  createdAt     DateTime                       @default(now())
+  id            Int           @id @default(autoincrement())
+  createdAt     DateTime      @default(now())
   data          Json
   contollerType contollerType
   query         String?
+}
+
+model order {
+  order_id              Int             @id
+  order_product_id      Int
+  order_quantity        Int
+  order_total           Float
+  order_createdAt       DateTime        @default(now())
+  order_user_id         Int
+  order_carrier_id      Int
+  order_address         String
+  order_city            String
+  order_country         String
+  order_postal_code     String
+  order_tracking_number String
+  order_status_id       Int
+  order_date            DateTime
+  order_shipment_date   DateTime
+  user                  user            @relation(fields: [order_user_id], references: [user_id])
+  product               product         @relation(fields: [order_product_id], references: [product_id])
+  order_carrier         carrier         @relation(fields: [order_carrier_id], references: [carrier_id])
+  order_status          status_delivery @relation(fields: [order_status_id], references: [status_delivery_id])
 }
 
 enum contollerType {
@@ -67,26 +90,4 @@ enum contollerType {
   searchMovies
   trendingMovies
   trendingMoviesList
-}
-
-model order {
-  order_id              Int             @id 
-  order_product_id      Int
-  order_quantity        Int
-  order_total           Float
-  order_createdAt       DateTime        @default(now())
-  order_user_id         Int
-  user                  user            @relation(fields: [order_user_id], references: [user_id])
-  product               product         @relation(fields: [order_product_id], references: [product_id])
-  order_carrier_id      Int
-  order_carrier         carrier         @relation(fields: [order_carrier_id], references: [carrier_id])
-  order_address         String
-  order_city            String
-  order_country         String
-  order_postal_code     String
-  order_tracking_number String
-  order_status_id       Int
-  order_status          status_delivery @relation(fields: [order_status_id], references: [status_delivery_id])
-  order_date            DateTime
-  order_shipment_date   DateTime
 }
