@@ -1,43 +1,49 @@
-#langchain server
-Brief description of the project here.
+# Customer Service Assistant
 
-Table of Contents
-Installation
-Usage
-Configuration
-Contribution
-License
+This project is a Customer Service Assistant based on LangChain, a framework for developing applications powered by large language models (LLMs). It uses TypeScript as the programming language and Bun on the server side.
 
-#Installation
-Clone the repository:
-bash
-Copy code
-git clone https://github.com/oniafk/chatbot-langchain-backend.git
-Install dependencies using Bun:
-bash
-Copy code
-cd your_project
-bun install
+## Description
 
-#Usage
+The Customer Service Assistant developed here aims to help customers review their order history, check the status of each order, and provide possible solutions according to company policies.
 
-To start the server:
+## Key Features
 
-bash
-Copy code
-bun start
-The server will start at localhost:3000 by default, but you can change the configuration in the corresponding files if needed.
+- **Order History Review:** Customers can easily access and review their order history.
+- **Order Status Check:** The assistant can show the current status of each order in real-time.
+- **Policy-Based Solutions:** Based on company policies, the assistant offers possible solutions to common customer issues.
 
-#Configuration
-Copy the .env.example file and rename it to .env.
-Edit the .env file and add necessary environment variables, such as database credentials, API keys, etc.
-#Contribution
-If you wish to contribute to this project, follow these steps:
+## Usage
 
-Fork the project.
-Create a new branch (git checkout -b feature/new-feature).
-Make your changes and commit (git commit -am 'Add a new feature').
-Push your changes to the repository (git push origin feature/new-feature).
-Open a pull request.
-#License
+To use this Customer Service Assistant, follow these steps:
+
+1. Clone this repository to your local machine.
+2. Install the necessary dependencies specified in the `package.json` file using bun.
+3. Start the server using the `bun start` command.
+4. Interact with the assistant following the provided instructions.
+
+## Technologies Used
+
+- TypeScript: Programming language used for the assistant's development.
+- Bun: Platform used for the server side.
+- LangChain: Framework for developing LLM-based applications.
+- Other modules and libraries as specified in `package.json`.
+
+## Contribution
+
+Contributions are welcome! If you wish to improve this project, follow these steps:
+
+1. Fork this repository.
+2. Create a new branch (`git checkout -b feature/improvement`).
+3. Make your changes and commit (`git commit -am 'Add a new feature'`).
+4. Push the branch (`git push origin feature/improvement`).
+5. Create a new Pull Request.
+
+## Authors
+
+- Manuel Arias - oniafk: Lead developer of the project.
+
+## License
+
 This project is licensed under the MIT License.
+
+---
