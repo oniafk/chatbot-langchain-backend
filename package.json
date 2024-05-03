@@ -9,7 +9,8 @@
     "@hono/node-server": "^1.8.2",
     "@langchain/community": "^0.0.44",
     "@langchain/openai": "^0.0.26",
-    "@prisma/client": "5.10.2",
+    "@prisma/client": "latest",
+    "@supabase/node-fetch": "^2.6.13",
     "@supabase/supabase-js": "^2.39.8",
     "dotenv": "^16.4.5",
     "faker": "^6.6.6",
@@ -19,7 +20,7 @@
     "mysql": "^2.18.1",
     "pg": "^8.11.3",
     "pgvector": "^0.1.8",
-    "prisma": "^5.10.2",
+    "prisma": "latest",
     "sqlite3": "^5.1.7",
     "ts-postgres": "^2.0.1",
     "typeorm": "^0.3.20"
