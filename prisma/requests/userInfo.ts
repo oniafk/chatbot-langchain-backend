@@ -1,5 +1,16 @@
+async function checkUrl(url: string): Promise<boolean> {
+  const response = await fetch(url, { method: "HEAD" });
+  return response.ok;
+}
+
 async function orderInfo() {
   const url = "https://chatbot-langchain-backend.onrender.com/orders";
+
+  const isUrlAvailable = await checkUrl(url);
+  if (!isUrlAvailable) {
+    throw new Error(`URL ${url} is not available`);
+  }
+
   const response = await fetch(url);
   const data = await response.json();
 
