@@ -2,7 +2,6 @@ import { MatryoshkaRetriever } from "langchain/retrievers/matryoshka_retriever";
 import { SupabaseVectorStore } from "@langchain/community/vectorstores/supabase";
 import { createClient } from "@supabase/supabase-js";
 import { OpenAIEmbeddings } from "@langchain/openai";
-import { getInfo } from "../../../../prisma/requests/userInfo";
 
 const openAiKey = process.env.OPENAI_API_KEY;
 const supabaseURL = process.env.SUPABASE_URL;
@@ -35,8 +34,6 @@ interface ChainSequenceProps {
 
 async function getRelevantDocuments(c: any) {
   const customerMessage = (await c.req.json()) as ChainSequenceProps;
-
-  const userInfo = await getInfo();
 
   const message = customerMessage;
 
@@ -73,7 +70,7 @@ async function getRelevantDocuments(c: any) {
     .map(({ pageContent }) => pageContent)
     .join("\n");
 
-  const allDocuments = DocumentsToString + userInfo;
+  const allDocuments = DocumentsToString;
 
   return c.json(allDocuments);
 }
