@@ -2,10 +2,19 @@ import { MatryoshkaRetriever } from "langchain/retrievers/matryoshka_retriever";
 import { SupabaseVectorStore } from "@langchain/community/vectorstores/supabase";
 import { createClient } from "@supabase/supabase-js";
 import { OpenAIEmbeddings } from "@langchain/openai";
+import { PromptTemplate } from "@langchain/core/prompts";
+import {
+  RunnableSequence,
+  RunnablePassthrough,
+} from "@langchain/core/runnables";
+import { ChatOpenAI } from "@langchain/openai";
+import { StringOutputParser } from "@langchain/core/output_parsers";
 
-const openAiKey = process.env.OPENAI_API_KEY;
+const openAIApiKey = process.env.OPENAI_API_KEY;
 const supabaseURL = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_API_KEY;
+
+const llm = new ChatOpenAI({ openAIApiKey });
 
 const smallEmbedding = new OpenAIEmbeddings({
   modelName: "text-embedding-3-small",
@@ -28,42 +37,51 @@ const retriever = new MatryoshkaRetriever({
   largeK: 3,
 });
 
+interface OriginalInput {
+  question: string;
+  chat_history: any[]; // Replace any with the actual type if known
+}
+
+interface HumanMessage {
+  original_input: OriginalInput;
+  question: string;
+}
 interface ChainSequenceProps {
   humanMessage: string;
+  chatHistory: string;
 }
 
 async function getRelevantDocuments(c: any) {
   const customerMessage = (await c.req.json()) as ChainSequenceProps;
 
-  const message = customerMessage;
+  const { humanMessage, chatHistory } = customerMessage;
 
-  const queryNOsScenarios = `check the documents for the NOs scenarios and and according to the customer message, verify if is asking for something that is not allow to do on the chat, message: ${message}`;
+  console.log(chatHistory, "chatHistory");
 
-  const queryCustomerServicePolicies = ` check the documents for cursomer service policies and verify the customer message to see if is asking for something that is not allow to do on the chat according to the company policies, message: ${message}`;
+  const condenseQuestionTemplate = `Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question, in its original language.
 
-  const queryCustomerServiceBehavior = ` check the documents for customer service asociate behavior and according to the message received form the customer get the best way to reply the message, message: ${message}`;
-
-  const queryConversationScenarios = ` check the documents for the conversation scenarios and based on the customer message, use the examples provided to get the best way to reply the customer, message: ${message}`;
-
-  const resultNOsScenarios = await retriever.getRelevantDocuments(
-    queryNOsScenarios
-  );
-  const resultCustomerServicePolicies = await retriever.getRelevantDocuments(
-    queryCustomerServicePolicies
-  );
-  const resultCustomerServiceBehavior = await retriever.getRelevantDocuments(
-    queryCustomerServiceBehavior
-  );
-  const resultConversationScenarios = await retriever.getRelevantDocuments(
-    queryConversationScenarios
+Chat History:
+{chat_history}
+Follow Up Input: {humanMessage}
+Standalone question:`;
+  const CONDENSE_QUESTION_PROMPT = PromptTemplate.fromTemplate(
+    condenseQuestionTemplate
   );
 
-  const results = [
-    resultNOsScenarios,
-    resultCustomerServicePolicies,
-    resultCustomerServiceBehavior,
-    resultConversationScenarios,
-  ];
+  const standaloneQuestionChain = RunnableSequence.from([
+    CONDENSE_QUESTION_PROMPT,
+    llm,
+    new StringOutputParser(),
+  ]);
+
+  const result1 = await standaloneQuestionChain.invoke({
+    chat_history: chatHistory,
+    humanMessage: humanMessage,
+  });
+
+  const resultQueryVectorStore = await retriever.getRelevantDocuments(result1);
+
+  const results = [resultQueryVectorStore];
 
   const mergedResults = results.flat();
   const DocumentsToString = mergedResults

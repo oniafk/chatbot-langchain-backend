@@ -30,7 +30,7 @@ const app = new Hono();
 
 app.use(
   cors({
-    origin: "http://52.167.144.192:3000",
+    origin: "http://localhost:3000",
     allowHeaders: ["Content-Type", "Authorization"],
     allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
@@ -57,7 +57,7 @@ app.get("/orders", getOrders);
 app.get("/payment-methods", getPaymentMethods);
 app.get("/all-order-info", getAllOrders);
 
-const port = parseInt(process.env.PORT!);
+const port = parseInt(process.env.PORT! || "3001");
 console.log(`Running at http://localhost:${port}`);
 // const port = 3001;
 // console.log(`Server is running on port ${port}`);
@@ -69,5 +69,5 @@ export default {
 
 serve({
   fetch: app.fetch,
-  port: 10000,
+  port: 3001,
 });
