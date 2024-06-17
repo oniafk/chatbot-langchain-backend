@@ -1,5 +1,5 @@
-import { serve } from "@hono/node-server";
 import { Hono } from "hono";
+import { cors } from "hono/cors";
 import { PrismaClient } from "@prisma/client";
 import matrtyoshkaApp from "./langchain/chatbot/retrievers/matryoshkaRetriever";
 const app = new Hono();
@@ -61,6 +61,15 @@ app.get("/users", async (c) => {
 });
 
 app.route("/chatbot", matrtyoshkaApp);
+
+app.use(
+  "*",
+  cors({
+    origin: "http://localhost:3000", // Ajusta el puerto según tu configuración local
+    allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: false, // Si necesitas enviar cookies o headers de autenticación
+  })
+);
 
 const port = process.env.PORT! || 4000;
 console.log(`Running at http://localhost:${port}`);
