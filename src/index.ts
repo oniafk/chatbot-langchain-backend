@@ -37,6 +37,29 @@ app.get("/all-order-info", async (c) => {
   }
 });
 
+app.get("/payment-methods", async (c) => {
+  try {
+    const paymentMethods = await prisma.payment_method.findMany();
+    return c.json({ paymentMethods, ok: true });
+  } catch (error) {
+    console.error(error);
+    return c.json(
+      { error: "An error occurred while fetching the payment methods" },
+      500
+    );
+  }
+});
+
+app.get("/users", async (c) => {
+  try {
+    const users = await prisma.user.findMany();
+    return c.json({ users, ok: true });
+  } catch (error) {
+    console.error(error);
+    return c.json({ error: "An error occurred while fetching the users" }, 500);
+  }
+});
+
 app.route("/chatbot", matrtyoshkaApp);
 
 const port = process.env.PORT! || 4000;
