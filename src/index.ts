@@ -65,9 +65,12 @@ app.route("/chatbot", matrtyoshkaApp);
 app.use(
   "*",
   cors({
-    origin: "http://localhost:3000", // Ajusta el puerto según tu configuración local
+    origin: [
+      "https://chatbot-langchain-seven.vercel.app/",
+      "https://chatbot-langchain-git-main-manuel-arias-projects.vercel.app/",
+      "https://chatbot-langchain-e5w2nsdhg-manuel-arias-projects.vercel.app/",
+    ],
     allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    credentials: false, // Si necesitas enviar cookies o headers de autenticación
   })
 );
 
