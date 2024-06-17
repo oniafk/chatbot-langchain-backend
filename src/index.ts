@@ -63,7 +63,7 @@ app.get("/users", async (c) => {
 app.route("/chatbot", matrtyoshkaApp);
 
 app.use(
-  "*",
+  "/*",
   cors({
     origin: [
       "https://chatbot-langchain-seven.vercel.app/",
@@ -71,6 +71,8 @@ app.use(
       "https://chatbot-langchain-e5w2nsdhg-manuel-arias-projects.vercel.app/",
     ],
     allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowHeaders: ["Content-Type"],
+    credentials: false,
   })
 );
 
