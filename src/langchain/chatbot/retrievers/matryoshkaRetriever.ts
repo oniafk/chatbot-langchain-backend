@@ -1,3 +1,4 @@
+import { Hono } from "hono";
 import { MatryoshkaRetriever } from "langchain/retrievers/matryoshka_retriever";
 import { SupabaseVectorStore } from "@langchain/community/vectorstores/supabase";
 import { createClient } from "@supabase/supabase-js";
@@ -9,6 +10,8 @@ import {
 } from "@langchain/core/runnables";
 import { ChatOpenAI } from "@langchain/openai";
 import { StringOutputParser } from "@langchain/core/output_parsers";
+
+const matrtyoshkaApp = new Hono();
 
 const openAIApiKey = process.env.OPENAI_API_KEY;
 const supabaseURL = process.env.SUPABASE_URL;
@@ -51,7 +54,7 @@ interface ChainSequenceProps {
   chatHistory: string;
 }
 
-async function getRelevantDocuments(c: any) {
+matrtyoshkaApp.post("/getRelevantDocuments", async (c) => {
   const customerMessage = (await c.req.json()) as ChainSequenceProps;
 
   const { humanMessage, chatHistory } = customerMessage;
@@ -91,6 +94,6 @@ Standalone question:`;
   const allDocuments = DocumentsToString;
 
   return c.json(allDocuments);
-}
+});
 
-export default getRelevantDocuments;
+export default matrtyoshkaApp;
