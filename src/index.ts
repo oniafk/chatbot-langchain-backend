@@ -37,7 +37,7 @@ app.get("/all-order-info", async (c) => {
   }
 });
 
-// app.post("/chatbot", getRelevantDocuments);
+app.route("/chatbot", matrtyoshkaApp);
 
 const port = process.env.PORT! || 4000;
 console.log(`Running at http://localhost:${port}`);
