@@ -6,6 +6,19 @@ const app = new Hono();
 
 const prisma = new PrismaClient();
 
+const corsOptions = cors({
+  origin: [
+    "https://chatbot-langchain-seven.vercel.app",
+    "https://chatbot-langchain-git-main-manuel-arias-projects.vercel.app",
+    "https://chatbot-langchain-e5w2nsdhg-manuel-arias-projects.vercel.app",
+  ],
+  allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowHeaders: ["Content-Type"],
+  credentials: false,
+});
+
+app.use("*", corsOptions);
+
 app.get("/", (c) => {
   return c.text("Hello Hono!");
 });
@@ -61,20 +74,6 @@ app.get("/users", async (c) => {
 });
 
 app.route("/chatbot", matrtyoshkaApp);
-
-app.use(
-  "/*",
-  cors({
-    origin: [
-      "https://chatbot-langchain-seven.vercel.app/",
-      "https://chatbot-langchain-git-main-manuel-arias-projects.vercel.app/",
-      "https://chatbot-langchain-e5w2nsdhg-manuel-arias-projects.vercel.app/",
-    ],
-    allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowHeaders: ["Content-Type"],
-    credentials: false,
-  })
-);
 
 const port = process.env.PORT! || 4000;
 console.log(`Running at http://localhost:${port}`);
