@@ -57,17 +57,17 @@ app.get("/orders", getOrders);
 app.get("/payment-methods", getPaymentMethods);
 app.get("/all-order-info", getAllOrders);
 
-const port = process.env.PORT! || 4000;
-console.log(`Running at http://localhost:${port}`);
+const PORT = process.env.PORT! || 4000;
+console.log(`Running at http://localhost:${PORT}`);
 // const port = 3001;
 // console.log(`Server is running on port ${port}`);
 
 export default {
-  port,
+  PORT,
   fetch: app.fetch,
 };
 
 serve({
   fetch: app.fetch,
-  port: 4000,
+  port: PORT,
 });
