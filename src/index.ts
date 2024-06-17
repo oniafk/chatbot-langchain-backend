@@ -42,7 +42,7 @@ app.get("/", (c) => {
 const port = process.env.PORT! || 4000;
 console.log(`Running at http://localhost:${port}`);
 
-serve({
+export default {
+  port: port,
   fetch: app.fetch,
-  port,
-});
+};
