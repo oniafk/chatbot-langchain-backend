@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider          = "postgresql"
-  url               = env("RENDER_EXTERNAL_URL")
+  url               = env("DATABASE_URL")
   shadowDatabaseUrl = env("SHADOW_DATA_BASE")
   relationMode      = "prisma"
 }
